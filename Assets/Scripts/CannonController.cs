@@ -12,29 +12,15 @@ public class CannonController : MonoBehaviour
     public Transform target; //Assign to the object you want to rotate
     public float angle;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    void Start(){}
 
     // Update is called once per frame
     void Update()
     {
+        // cannon changes angle based on cursor position
         followCursor();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            float distancePlane = Camera.main.transform.position.y;
-
-            Vector3 screenPosWithDistance = (Vector3)Input.mousePosition + (Vector3.forward * distancePlane);//*distancePlane);
-            Vector3 positionWorld = Camera.main.ScreenToWorldPoint(screenPosWithDistance);
-
-            Vector3 direction = (positionWorld - this.transform.position);
-            //Debug.Log("direction: " + direction);
-            //Debug.Log("mouse_position " + Input.mousePosition);
-            GameObject projectile = Instantiate<GameObject>(projectilePrefab);
-            projectile.transform.position = this.gameObject.transform.position;
-            projectile.GetComponent<ProjectileController>().velocity = direction * 10;
-        }
+        // generates projectile when space is pressed
+        makeProjectile();
     }
 
     void followCursor()
@@ -45,6 +31,27 @@ public class CannonController : MonoBehaviour
         mousePos.y = mousePos.y - gunPos.y;
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
+
     }
 
+    void makeProjectile()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // make a new cannnonball
+            GameObject projectile = Instantiate<GameObject>(projectilePrefab);
+            // make sure cannonball starts off in the cannon
+            projectile.transform.position = this.gameObject.transform.position;
+            Vector3 p = projectile.transform.position;
+            p.y += 0.35f;
+            projectile.transform.position = p;
+           
+            // calculate angle to shoot cannonball out
+            angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+            projectile.transform.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
+            // shoot cannonball forward
+            projectile.GetComponent<ProjectileController>().velocity = Vector3.forward * 5;
+        }
+    }
+    
 }
