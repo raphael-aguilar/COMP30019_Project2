@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TurtleController : MonoBehaviour
 {
-
+    public float fasterspeed = 5.0f;
     public float speed = 1.0f; // Default speed sensitivity
 
     // Use this for initialization
@@ -21,6 +21,8 @@ public class TurtleController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
+        float currentspeed = Input.GetButton("Run")?fasterspeed:speed;
+
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
         // transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
 
@@ -28,7 +30,7 @@ public class TurtleController : MonoBehaviour
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement.normalized), 0.2f);
         }
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        transform.Translate(movement * currentspeed * Time.deltaTime, Space.World);
 
 
         if (Input.anyKey == true)
