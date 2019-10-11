@@ -11,10 +11,12 @@ public class CannonController : MonoBehaviour
     public Vector3 gunPos;
     public Transform target; //Assign to the object you want to rotate
     public float angle;
+
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -34,7 +36,9 @@ public class CannonController : MonoBehaviour
             GameObject projectile = Instantiate<GameObject>(projectilePrefab);
             projectile.transform.position = this.gameObject.transform.position;
             projectile.GetComponent<ProjectileController>().velocity = direction * 10;
+            
         }
+        
     }
 
     void followCursor()
@@ -46,5 +50,9 @@ public class CannonController : MonoBehaviour
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
     }
+
+    
+
+    
 
 }
