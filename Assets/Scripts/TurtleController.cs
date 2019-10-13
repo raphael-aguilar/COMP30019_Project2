@@ -5,10 +5,11 @@ public class TurtleController : MonoBehaviour
 {
     public float fasterspeed = 5.0f;
     public float speed = 1.0f; // Default speed sensitivity
-
+    public Rigidbody rb;
     // Use this for initialization
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -41,10 +42,29 @@ public class TurtleController : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().Play("STurtle_Idle_Anim");
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DisableRagdoll();
+        }
+        else
+        {
+            EnableRagdoll();
+        }
+
     }
-        void OnCollisionEnter(Collision collision)
+    // Let the rigidbody take control and detect collisions.
+    void EnableRagdoll()
     {
-        
+        rb.isKinematic = false;
+        rb.detectCollisions = true;
+    }
+
+    // Let animation control the rigidbody and ignore collisions.
+    void DisableRagdoll()
+    {
+        rb.isKinematic = true;
+        rb.detectCollisions = false;
     }
 
 }
