@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthManager : MonoBehaviour {
+public class HealthManager : MonoBehaviour
+{
 
     public GameObject createOnDestroy;
     public int startingHealth = 100;
     private int currentHealth;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         this.ResetHealthToStarting();
-	}
+    }
 
     // Reset health to original starting health
     public void ResetHealthToStarting()

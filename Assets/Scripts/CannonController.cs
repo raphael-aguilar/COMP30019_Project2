@@ -12,7 +12,7 @@ public class CannonController : MonoBehaviour
     public Transform target; //Assign to the object you want to rotate
     public float angle;
     // Start is called before the first frame update
-    void Start(){}
+    void Start() { }
 
     // Update is called once per frame
     void Update()
@@ -36,7 +36,7 @@ public class CannonController : MonoBehaviour
 
     void makeProjectile()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             // make a new cannnonball
             GameObject projectile = Instantiate<GameObject>(projectilePrefab);
@@ -45,13 +45,13 @@ public class CannonController : MonoBehaviour
             Vector3 p = projectile.transform.position;
             p.y += 0.35f;
             projectile.transform.position = p;
-           
+
             // calculate angle to shoot cannonball out
             angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
             projectile.transform.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
             // shoot cannonball forward
-            projectile.GetComponent<ProjectileController>().velocity = Vector3.forward * 5;
+            projectile.GetComponent<TurtleProjectileController>().velocity = Vector3.forward * 5;
         }
     }
-    
+
 }

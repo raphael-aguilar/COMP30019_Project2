@@ -2,17 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ProjectileController : MonoBehaviour {
+public class ProjectileController : MonoBehaviour
+{
 
     public Vector3 velocity;
 
-    public int damageAmount = 50;
+    public int damageAmount = 25;
     public string tagToDamage;
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         this.transform.Translate(velocity * Time.deltaTime);
-	}
+    }
 
     // Handle collisions
     void OnTriggerEnter(Collider col)
