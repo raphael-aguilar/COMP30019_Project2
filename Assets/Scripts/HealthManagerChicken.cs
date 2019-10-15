@@ -11,6 +11,8 @@ public class HealthManagerChicken : MonoBehaviour
     public GameObject player;
     private int currentHealth;
 
+    private float chickVar = 8.0f;
+
     // Use this for initialization
     void Start()
     {
@@ -37,16 +39,11 @@ public class HealthManagerChicken : MonoBehaviour
             {
                 GameObject chick = Instantiate<GameObject>(chickPrefab);
                 chick.transform.position = this.transform.position;
-
-                Vector3 chickVelocity = (player.transform.position - chick.transform.position).normalized;
-                chickVelocity.x += Random.Range(-0.4f, 0.4f);
-                chickVelocity.z += Random.Range(-0.4f, 0.4f);
-                //Facing direciton isn't working atm, maybe please ask
-                //chick.transform.rotation = Quaternion.LookRotation(chickVelocity);
-                //chick.transform.LookAt(chickVelocity);
+                 Vector3 chickVelocity = player.transform.position;
+                chickVelocity.x += Random.Range(-chickVar, chickVar);
+                chickVelocity.z += Random.Range(-chickVar, chickVar);
+                chick.transform.LookAt(chickVelocity);
                 //Debug.Log("chick velocity: " + chickVelocity);
-
-                chick.GetComponent<ProjectileController>().velocity = chickVelocity;
 
             }
         }

@@ -504,7 +504,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4429102427960218}
   - component: {fileID: 95777776565643564}
-  - component: {fileID: -8918300426878652744}
   - component: {fileID: -4529426214947943863}
   - component: {fileID: 5746550729801284427}
   - component: {fileID: 3968695045823115299}
@@ -554,21 +553,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-8918300426878652744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767663768970106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff4980d90da98344830b08def7548a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
-  damageAmount: 25
-  tagToDamage: Player
 --- !u!114 &-4529426214947943863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663e1e4904afb5a49ac0cc7cab44e5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 25
+  tagToDamage: Player
+  tagToScenery: Scenery
 --- !u!114 &5746550729801284427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,8 +591,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!54 &7433816929226925457
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -617,8 +604,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
