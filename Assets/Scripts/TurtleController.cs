@@ -4,7 +4,7 @@ using System.Collections;
 public class TurtleController : MonoBehaviour
 {
     public float fasterspeed = 5.0f;
-    public float speed = 1.0f; // Default speed sensitivity
+    public float speed = 3.0f; // Default speed sensitivity
     public Rigidbody rb;
     // Use this for initialization
     void Start()
@@ -43,13 +43,20 @@ public class TurtleController : MonoBehaviour
             gameObject.GetComponent<Animator>().Play("STurtle_Idle_Anim");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
         {
-            DisableRagdoll();
+            // DisableRagdoll();
         }
         else
         {
             EnableRagdoll();
+        }
+        if (currentspeed == fasterspeed){
+            Animator animator = gameObject.GetComponent<Animator>();
+            animator.speed = 10f;
+        } else {
+            Animator animator = gameObject.GetComponent<Animator>();
+            animator.speed = 1f;
         }
 
     }

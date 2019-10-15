@@ -9,11 +9,11 @@ public class FollowTarget : MonoBehaviour
 
     public GameObject player;
     
-    private float y_dist = 15;
+    private float y_dist = 10;
     private float x_dist = 0;
-    private float z_dist = 0;
+    private float z_dist = 2;
 
-    private float x_rot = 90;
+    private float x_rot = 80;
     private float y_rot = 0;
     private float z_rot = 0;
 
