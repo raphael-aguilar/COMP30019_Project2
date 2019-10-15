@@ -3,12 +3,13 @@ using System.Collections;
 
 public class TurtleController : MonoBehaviour
 {
-
-    public float speed = 1.0f; // Default speed sensitivity
-
+    public float fasterspeed = 5.0f;
+    public float speed = 3.0f; // Default speed sensitivity
+    public Rigidbody rb;
     // Use this for initialization
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -21,6 +22,8 @@ public class TurtleController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
+        float currentspeed = Input.GetButton("Run")?fasterspeed:speed;
+
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
         // transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
 
@@ -28,7 +31,7 @@ public class TurtleController : MonoBehaviour
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement.normalized), 0.2f);
         }
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        transform.Translate(movement * currentspeed * Time.deltaTime, Space.World);
 
 
         if (Input.anyKey == true)
@@ -39,10 +42,36 @@ public class TurtleController : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().Play("STurtle_Idle_Anim");
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+        {
+            // DisableRagdoll();
+        }
+        else
+        {
+            EnableRagdoll();
+        }
+        if (currentspeed == fasterspeed){
+            Animator animator = gameObject.GetComponent<Animator>();
+            animator.speed = 10f;
+        } else {
+            Animator animator = gameObject.GetComponent<Animator>();
+            animator.speed = 1f;
+        }
+
     }
-        void OnCollisionEnter(Collision collision)
+    // Let the rigidbody take control and detect collisions.
+    void EnableRagdoll()
     {
-        
+        rb.isKinematic = false;
+        rb.detectCollisions = true;
+    }
+
+    // Let animation control the rigidbody and ignore collisions.
+    void DisableRagdoll()
+    {
+        rb.isKinematic = true;
+        rb.detectCollisions = false;
     }
 
 }

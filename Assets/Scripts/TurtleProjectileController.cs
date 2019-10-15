@@ -9,6 +9,7 @@ public class TurtleProjectileController : MonoBehaviour
 
     public int damageAmount = 25;
     public string tagToDamage;
+    public string tagToScenery;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +27,9 @@ public class TurtleProjectileController : MonoBehaviour
             healthManager.ApplyDamage(damageAmount);
 
             // Destroy self
+            Destroy(this.gameObject);
+        }
+        if (col.gameObject.tag == tagToScenery){
             Destroy(this.gameObject);
         }
     }

@@ -9,6 +9,7 @@ public class ProjectileController : MonoBehaviour
 
     public int damageAmount = 25;
     public string tagToDamage;
+    public string tagToScenery;
 
     // Update is called once per frame
     void Update()
@@ -19,6 +20,7 @@ public class ProjectileController : MonoBehaviour
     // Handle collisions
     void OnTriggerEnter(Collider col)
     {
+        Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == tagToDamage)
         {
             // Damage object with relevant tag
@@ -26,6 +28,9 @@ public class ProjectileController : MonoBehaviour
             healthManager.ApplyDamage(damageAmount);
 
             // Destroy self
+            Destroy(this.gameObject);
+        } 
+        if (col.gameObject.tag == tagToScenery){
             Destroy(this.gameObject);
         }
     }

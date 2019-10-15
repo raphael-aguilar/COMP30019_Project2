@@ -5,8 +5,10 @@ using UnityEngine;
 public class ChickenController : MonoBehaviour
 {
     public string tagBeenHit;
+    public string tagToDamage;
     public Vector3 targetPos;
     public bool isMoving = false;
+    public int damageAmount = 100;
     public float maxRange = 10f;
     public float waitTime = 1f;
     public float speed = 3f;
@@ -37,6 +39,12 @@ public class ChickenController : MonoBehaviour
         if (col.gameObject.tag == tagBeenHit)
         {
             gameObject.GetComponent<Animator>().Play("Run In Place");
+        }
+        if (col.gameObject.tag == tagToDamage)
+        {
+            HealthManager healthManager = col.gameObject.GetComponent<HealthManager>();
+            healthManager.ApplyDamage(damageAmount);
+
         }
     }
 

@@ -111,6 +111,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   damageAmount: 25
   tagToDamage: Player
+  tagToScenery: Scenery
 --- !u!114 &2758740127380424990
 MonoBehaviour:
   m_ObjectHideFlags: 0
