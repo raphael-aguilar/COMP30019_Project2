@@ -9,7 +9,7 @@ public class ChickenController : MonoBehaviour
     public Vector3 targetPos;
     public bool isMoving = false;
     public int damageAmount = 100;
-    public float maxRange = 10f;
+    public float maxRange = 4f;
     public float waitTime = 1f;
     public float speed = 3f;
     public GameObject eggPrefab;

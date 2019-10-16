@@ -16,6 +16,7 @@ public class TurtleController : MonoBehaviour
     void Update()
     {
         ControlTurtle();
+
     }
     void ControlTurtle()
     {
@@ -53,7 +54,7 @@ public class TurtleController : MonoBehaviour
         }
         if (currentspeed == fasterspeed){
             Animator animator = gameObject.GetComponent<Animator>();
-            animator.speed = 10f;
+            animator.speed = fasterspeed;
         } else {
             Animator animator = gameObject.GetComponent<Animator>();
             animator.speed = 1f;

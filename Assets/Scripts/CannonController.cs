@@ -45,7 +45,7 @@ public class CannonController : MonoBehaviour
             // make sure cannonball starts off in the cannon
             projectile.transform.position = this.gameObject.transform.position;
             Vector3 p = projectile.transform.position;
-            // p.y += 0.35f;
+            p.y += 0.35f;
             projectile.transform.position = p;
 
             // calculate angle to shoot cannonball out
