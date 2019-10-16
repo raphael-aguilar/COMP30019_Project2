@@ -10,11 +10,11 @@ public class ProjectileController : MonoBehaviour
     public int damageAmount = 25;
     public string tagToDamage;
     public string tagToScenery;
-
+    public int speed = 1;
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(velocity * Time.deltaTime);
+        this.transform.Translate(velocity * Time.deltaTime * speed);
     }
 
     // Handle collisions

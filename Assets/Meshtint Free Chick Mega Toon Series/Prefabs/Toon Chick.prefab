@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 4429102427960218}
   - component: {fileID: 95777776565643564}
   - component: {fileID: -4529426214947943863}
+  - component: {fileID: -819332701577189658}
   - component: {fileID: 5746550729801284427}
   - component: {fileID: 3968695045823115299}
   - component: {fileID: 7433816929226925457}
@@ -568,6 +569,21 @@ MonoBehaviour:
   damageAmount: 25
   tagToDamage: Player
   tagToScenery: Scenery
+--- !u!114 &-819332701577189658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767663768970106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9592fb3c34cba48a66efe8f02a8353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToGetDamage: Projectile
+  createOnDestroy: {fileID: 1687695751767166, guid: 0f926642c0d178343b8fe7f69891ca95,
+    type: 3}
 --- !u!114 &5746550729801284427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,7 +607,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Size: {x: 0.2, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!54 &7433816929226925457
 Rigidbody:
