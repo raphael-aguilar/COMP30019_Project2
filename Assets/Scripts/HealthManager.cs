@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class HealthManager : MonoBehaviour
 {
 
     public GameObject createOnDestroy;
+    public Image bar;
     public int startingHealth = 100;
     private int currentHealth;
+    private float healthBar;
 
     // Use this for initialization
     void Start()
@@ -25,6 +28,8 @@ public class HealthManager : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar = (float)currentHealth/startingHealth;
+        bar.fillAmount = healthBar;
         if (currentHealth <= 0)
         {
             Destroy(this.gameObject);
