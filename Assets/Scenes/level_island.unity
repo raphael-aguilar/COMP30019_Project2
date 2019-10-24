@@ -332,7 +332,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 35a36a345f0068d4fb8f05fc3dc2c26f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49828c85bf5a5af408cc89ec1e6a2c47, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1648,7 +1648,7 @@ MonoBehaviour:
   screen: {fileID: 1150118868}
   otherScreen1: {fileID: 2115631790}
   otherScreen2: {fileID: 338130074}
-  menuButton: {fileID: 1579684791}
+  menuButton: {fileID: 36906052}
   fadeDuration: 1
 --- !u!4 &502590862 stripped
 Transform:
@@ -7127,7 +7127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   createOnDestroy: {fileID: 1687695751767166, guid: 0f926642c0d178343b8fe7f69891ca95,
     type: 3}
-  bar: {fileID: 0}
+  bar: {fileID: 1200404398}
   startingHealth: 100
 --- !u!114 &2107070908
 MonoBehaviour:

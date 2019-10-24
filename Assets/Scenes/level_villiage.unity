@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   createOnDestroy: {fileID: 1687695751767166, guid: 0f926642c0d178343b8fe7f69891ca95,
     type: 3}
-  bar: {fileID: 0}
+  bar: {fileID: 1723481955}
   startingHealth: 100
 --- !u!114 &5550084
 MonoBehaviour:
