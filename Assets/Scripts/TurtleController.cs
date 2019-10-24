@@ -6,7 +6,7 @@ public class TurtleController : MonoBehaviour
     public float fasterspeed = 5.0f;
     public float speed = 3.0f; // Default speed sensitivity
     public Rigidbody rb;
-    // Use this for initialization
+    // Use this for initializationz
 
     private float initialYPos;
     void Start()

@@ -12,6 +12,8 @@ public class CannonController : MonoBehaviour
     public Transform target; //Assign to the object you want to rotate
     public float angle;
 
+    private float bulletSpeed = 2.0f;
+
     // The time you are able to make between shots
     private float firerate = 1.0f;
 
@@ -70,7 +72,7 @@ public class CannonController : MonoBehaviour
             angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
             projectile.transform.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
             // shoot cannonball forward
-            projectile.GetComponent<TurtleProjectileController>().velocity = Vector3.forward * 5;
+            projectile.GetComponent<TurtleProjectileController>().velocity = bulletSpeed * Vector3.forward * 5;
             
             levelTimer = 0;
         }
