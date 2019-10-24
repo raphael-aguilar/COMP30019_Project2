@@ -12,17 +12,33 @@ public class CannonController : MonoBehaviour
     public Transform target; //Assign to the object you want to rotate
     public float angle;
 
+    // The time you are able to make between shots
+    private float firerate = 1.0f;
+
+    private float levelTimer;
+
     
     // Start is called before the first frame update
-    void Start() { }
+    void Start() { 
+        levelTimer = firerate;
+    }
 
     // Update is called once per frame
     void Update()
     {
         // cannon changes angle based on cursor position
         followCursor();
-        // generates projectile when space is pressed
-        makeProjectile();
+
+        levelTimer += Time.deltaTime;
+        
+        
+
+
+        if (levelTimer > firerate) {
+            // generates projectile when space is pressed
+            makeProjectile();
+        }
+
     }
 
     void followCursor()
@@ -38,6 +54,8 @@ public class CannonController : MonoBehaviour
 
     void makeProjectile()
     {
+
+
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             // make a new cannnonball
@@ -53,6 +71,8 @@ public class CannonController : MonoBehaviour
             projectile.transform.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
             // shoot cannonball forward
             projectile.GetComponent<TurtleProjectileController>().velocity = Vector3.forward * 5;
+            
+            levelTimer = 0;
         }
     }
 

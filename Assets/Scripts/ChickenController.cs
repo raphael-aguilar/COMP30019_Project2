@@ -10,14 +10,20 @@ public class ChickenController : MonoBehaviour
     public bool isMoving = false;
     public int damageAmount = 100;
     public float maxRange = 4f;
-    public float waitTime = 1f;
+    public float waitTime = 0.0f;
     public float speed = 3f;
     public GameObject eggPrefab;
     public GameObject player;
+
+    public float bulletSpeed = 2f;
+    
+    private float initialMove = 0.0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -81,7 +87,8 @@ public class ChickenController : MonoBehaviour
     {
         GameObject egg = Instantiate<GameObject>(eggPrefab);
         egg.transform.position = this.transform.position;
-        egg.GetComponent<ProjectileController>().velocity = (player.transform.position - egg.transform.position).normalized;
+        egg.GetComponent<ProjectileController>().velocity = bulletSpeed*(player.transform.position - egg.transform.position).normalized;
+
     }
 
 }
