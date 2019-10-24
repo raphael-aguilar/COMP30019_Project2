@@ -23,7 +23,7 @@ public class ChickenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Animator>().Play("Idle");
+        //gameObject.GetComponent<Animator>().Play("Idle");
         if (isMoving == false)
         {
             FindNewTargetPos();

@@ -7,9 +7,13 @@ public class TurtleController : MonoBehaviour
     public float speed = 3.0f; // Default speed sensitivity
     public Rigidbody rb;
     // Use this for initialization
+
+    private float initialYPos;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        initialYPos = transform.position.y;
+
     }
 
     // Update is called once per frame
@@ -17,6 +21,14 @@ public class TurtleController : MonoBehaviour
     {
         ControlTurtle();
 
+        // transform.position = new Vector3(transform.position.x, initialYPos, transform.position.z);
+        rb.velocity = Vector3.zero;
+
+    }
+
+    void LateUpdate() {
+        transform.position = new Vector3(transform.position.x, initialYPos, transform.position.z);
+        // ControlTurtle();
     }
     void ControlTurtle()
     {
