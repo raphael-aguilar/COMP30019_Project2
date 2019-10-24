@@ -11,14 +11,12 @@ public class ChickenController : MonoBehaviour
     public int damageAmount = 100;
     public float maxRange = 4f;
     public float waitTime = 0.0f;
-    public float speed = 3f;
+    public float speed = 4f;
     public GameObject eggPrefab;
     public GameObject player;
 
     public float bulletSpeed = 2f;
     
-    private float initialMove = 0.0f;
-
 
     // Start is called before the first frame update
     void Start()
