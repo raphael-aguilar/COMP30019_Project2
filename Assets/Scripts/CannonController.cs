@@ -15,7 +15,7 @@ public class CannonController : MonoBehaviour
     private float bulletSpeed = 2.0f;
 
     // The time you are able to make between shots
-    private float firerate = 1.0f;
+    private float firerate = 0.5f;
 
     private float levelTimer;
 
@@ -58,7 +58,7 @@ public class CannonController : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             // make a new cannnonball
             GameObject projectile = Instantiate<GameObject>(projectilePrefab);
