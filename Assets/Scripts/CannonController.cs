@@ -15,7 +15,7 @@ public class CannonController : MonoBehaviour
     private float bulletSpeed = 2.0f;
 
     // The time you are able to make between shots
-    private float firerate = 1.0f;
+    private float firerate = 0.5f;
 
     private float levelTimer;
 

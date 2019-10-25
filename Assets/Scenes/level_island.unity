@@ -2331,8 +2331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -500}
-  m_SizeDelta: {x: 100, y: 96}
+  m_AnchoredPosition: {x: -200, y: -60}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &789506204 stripped
 Transform:
@@ -7128,7 +7128,7 @@ MonoBehaviour:
   createOnDestroy: {fileID: 1687695751767166, guid: 0f926642c0d178343b8fe7f69891ca95,
     type: 3}
   bar: {fileID: 1200404398}
-  startingHealth: 100
+  startingHealth: 250
 --- !u!114 &2107070908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7142,7 +7142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fasterspeed: 5
-  speed: 1
+  speed: 3
   rb: {fileID: 0}
 --- !u!95 &2107070909
 Animator:
