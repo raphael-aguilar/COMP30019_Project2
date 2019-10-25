@@ -4618,7 +4618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeDisplay: {fileID: 1331995643}
-  levelTime: 70
+  levelTime: 60
 --- !u!1001 &668659055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6415,7 +6415,7 @@ MonoBehaviour:
   createOnDestroy: {fileID: 1687695751767166, guid: 0f926642c0d178343b8fe7f69891ca95,
     type: 3}
   bar: {fileID: 701690579}
-  startingHealth: 150
+  startingHealth: 100
 --- !u!114 &852491635
 MonoBehaviour:
   m_ObjectHideFlags: 0

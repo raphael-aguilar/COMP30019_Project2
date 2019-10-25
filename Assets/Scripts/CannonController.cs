@@ -58,7 +58,7 @@ public class CannonController : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             // make a new cannnonball
             GameObject projectile = Instantiate<GameObject>(projectilePrefab);
