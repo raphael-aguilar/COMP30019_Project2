@@ -5687,6 +5687,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 744702172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &747546188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100066, guid: b1dd02c4daa7e6248ab9cf52038f20cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1725999633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &749974912 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2a06319ba7068a649affb1e1174ee306,
@@ -6431,6 +6437,8 @@ MonoBehaviour:
   fasterspeed: 5
   speed: 3
   rb: {fileID: 852491632}
+  getDamaged: egg
+  turtle_model: {fileID: 747546188}
 --- !u!95 &852491636
 Animator:
   serializedVersion: 3

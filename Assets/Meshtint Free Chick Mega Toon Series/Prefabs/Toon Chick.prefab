@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 137113936749643618}
   m_Layer: 0
   m_Name: Toon Chick
-  m_TagString: Untagged
+  m_TagString: egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 7433816929226925457}
   m_Layer: 0
   m_Name: Toon Chick
-  m_TagString: Untagged
+  m_TagString: egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
