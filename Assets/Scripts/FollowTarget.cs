@@ -10,6 +10,9 @@ public class FollowTarget : MonoBehaviour
     // Default translation for the turtle   
     private Vector3 skew = new Vector3(0, 10, -2);
 
+    private float min_y = 5;
+    private float max_y = 20;
+
     void Start()
     {
     }
@@ -19,7 +22,17 @@ public class FollowTarget : MonoBehaviour
     {
 
         // Use this to change the view for recording clips
-        // skew = new Vector3(2f, 3f, -2f);
+        
+        skew = skew + new Vector3(0, Input.mouseScrollDelta.y, 0);
+
+        if (skew.y > max_y) {
+            skew = new Vector3(skew.x, max_y, skew.z);
+        }
+
+        if (skew.y < min_y) {
+            skew = new Vector3(skew.x, min_y, skew.z);
+        }
+
         
         this.transform.position = target.position + skew;
         this.transform.LookAt(target);
