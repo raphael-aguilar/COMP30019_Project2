@@ -26,9 +26,9 @@ public class ChickController : MonoBehaviour
 
         gameObject.GetComponent<Animator>().Play("Jump W Root");
     }
-  void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider col)
     {
-        Debug.Log(col.gameObject.tag);
+        //  Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == tagToDamage)
         {
             // Damage object with relevant tag
@@ -37,8 +37,9 @@ public class ChickController : MonoBehaviour
 
             // Destroy self
             Destroy(this.gameObject);
-        } 
-        if (col.gameObject.tag == tagToScenery){
+        }
+        if (col.gameObject.tag == tagToScenery)
+        {
             Destroy(this.gameObject);
         }
     }

@@ -22,18 +22,19 @@ public class FollowTarget : MonoBehaviour
     {
 
         // Use this to change the view for recording clips
-        
+
         skew = skew + new Vector3(0, Input.mouseScrollDelta.y, 0);
 
-        if (skew.y > max_y) {
+        if (skew.y > max_y)
+        {
             skew = new Vector3(skew.x, max_y, skew.z);
         }
 
-        if (skew.y < min_y) {
+        if (skew.y < min_y)
+        {
             skew = new Vector3(skew.x, min_y, skew.z);
         }
 
-        
         this.transform.position = target.position + skew;
         this.transform.LookAt(target);
     }
