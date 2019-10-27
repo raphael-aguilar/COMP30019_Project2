@@ -1,4 +1,4 @@
-Shader "LowPolyWater/WaterShaded" {
+Shader "Custom/WaterShaded" {
 Properties { 
 
 	_BaseColor ("Base color", COLOR)  = ( .54, .95, .99, 0.5) 
