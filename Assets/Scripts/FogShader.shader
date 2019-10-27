@@ -1,4 +1,5 @@
-﻿
+﻿// Based on Vertical Fog Shader by Harry Alisavakis
+//http://halisavakis.com/my-take-on-shaders-vertical-fog/
 
 Shader "Unlit/VerticalFogIntersection"
 {
