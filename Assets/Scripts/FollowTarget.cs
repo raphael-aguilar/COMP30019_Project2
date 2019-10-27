@@ -21,6 +21,11 @@ public class FollowTarget : MonoBehaviour
     void Update()
     {
 
+        // If target is null there is nothing to follow
+        if (!target) {
+            return;
+        }
+
         // Use this to change the view for recording clips
 
         skew = skew + new Vector3(0, Input.mouseScrollDelta.y, 0);

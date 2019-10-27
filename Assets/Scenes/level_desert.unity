@@ -5687,6 +5687,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 744702172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &747546188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100066, guid: b1dd02c4daa7e6248ab9cf52038f20cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1725999633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &749974912 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2a06319ba7068a649affb1e1174ee306,
@@ -6431,6 +6437,8 @@ MonoBehaviour:
   fasterspeed: 5
   speed: 3
   rb: {fileID: 852491632}
+  getDamaged: egg
+  turtle_model: {fileID: 747546188}
 --- !u!95 &852491636
 Animator:
   serializedVersion: 3
@@ -7783,7 +7791,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -9845,7 +9853,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 21c37b1f17d07954e9f9417bcc2de2db, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.384
+  m_Volume: 0.033
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10077,8 +10085,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -200, y: -60}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -180, y: -60}
+  m_SizeDelta: {x: 80, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1443483133 stripped
 GameObject:

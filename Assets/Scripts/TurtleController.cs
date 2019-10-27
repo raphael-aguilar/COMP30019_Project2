@@ -8,6 +8,16 @@ public class TurtleController : MonoBehaviour
     public Rigidbody rb;
     // Use this for initializationz
 
+    public string getDamaged;
+
+
+    public GameObject turtle_model;
+
+    private bool isDamaged = false;
+    private bool isOn = false;
+
+    private float time = 0;
+
     private float initialYPos;
     void Start()
     {
@@ -23,6 +33,25 @@ public class TurtleController : MonoBehaviour
 
         // transform.position = new Vector3(transform.position.x, initialYPos, transform.position.z);
         rb.velocity = Vector3.zero;
+
+        if (isDamaged) {
+            time += Time.deltaTime;
+
+            if (isOn) {
+                turtle_model.GetComponent<Renderer>().material.SetFloat("_RimPower", 0);
+            } else {
+                turtle_model.GetComponent<Renderer>().material.SetFloat("_RimPower", 8);
+            }
+            isOn = !isOn;
+
+            if (time > 0.5f) {
+                time = 0;
+                isDamaged = false;
+                turtle_model.GetComponent<Renderer>().material.SetFloat("_RimPower", 8);
+            }
+        }
+
+
 
     }
 
@@ -73,7 +102,7 @@ public class TurtleController : MonoBehaviour
         }
 
     }
-    // Let the rigidbody take control and detect collisions.
+    // Let the rigidbody take control and de"Rim Power"tect collisions, .
     void EnableRagdoll()
     {
         rb.isKinematic = false;
@@ -85,6 +114,14 @@ public class TurtleController : MonoBehaviour
     {
         rb.isKinematic = true;
         rb.detectCollisions = false;
+    }
+
+    void OnTriggerEnter(Collider col) {
+        
+        if (col.gameObject.tag == getDamaged) {
+            isDamaged = true;
+            time = 0;
+        }
     }
 
 }
